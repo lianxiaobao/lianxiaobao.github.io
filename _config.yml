@@ -12,7 +12,7 @@ github_repo: "https://github.com/lianxiaobao/lianxiaobao.github.io.git" # you co
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "人还是要有梦想的，万一实现了呢"
-sidebar-avatar: /img/xiaobao.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-BY-gentle.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
