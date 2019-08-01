@@ -68,15 +68,12 @@ import java.util.*;
  * <p/>
  * 获取job的配置信息<br>
  * Configuration configuration = Configuration.from(new File("Config.json")); <br>
- * 
  * String jobContainerClass =
  * configuration.getString("core.container.job.class"); <br>
- * 
  * <p/>
  * <br>
  * 设置多级List <br>
  * configuration.set("job.reader.parameter.jdbcUrl", Arrays.asList(new String[]
- * 
  * {"jdbc", "jdbc"}));
  * <p/>
  * <p/>
@@ -84,14 +81,12 @@ import java.util.*;
  * <br>
  * 合并Configuration: <br>
  * configuration.merge(another);
- * 
  * <p/>
  * <p/>
  * <br>
  * <br>
  * <br>
  * <p/>
- * 
  * Configuration 存在两种较好地实现方式<br>
  * 第一种是将JSON配置信息中所有的Key全部打平，用a.b.c的级联方式作为Map的Key，内部使用一个Map保存信息 <br>
  * 第二种是将JSON的对象直接使用结构化树形结构保存<br>
@@ -219,17 +214,14 @@ public class Configuration {
 	 * <p/>
 	 * 对于如下JSON
 	 * <p/>
-	 * 
 	 * {"a": {"b": {"c": [0,1,2,3]}}}
 	 * <p/>
-	 * 
 	 * config.get("") 返回整个Map <br>
 	 * config.get("a") 返回a下属整个Map <br>
 	 * config.get("a.b.c") 返回c对应的数组List <br>
 	 * config.get("a.b.c[0]") 返回数字0
 	 * 
 	 * @return Java表示的JSON对象，如果path不存在或者对象不存在，均返回null。
-	 * 
 	 */
 	public Object get(final String path) {
 		this.checkPath(path);
