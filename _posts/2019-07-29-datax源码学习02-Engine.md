@@ -221,6 +221,7 @@ public class Engine {
 
         return -1;
     }
+    
 
     public static void main(String[] args) throws Exception {
         int exitCode = 0;
@@ -249,4 +250,4 @@ public class Engine {
 
 ```
 
-上述python文件执行完毕之后会启动java命令，主函数是com.alibaba.datax.core.Engine，至此python文件主要流程完毕
+
