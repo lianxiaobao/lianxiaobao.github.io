@@ -20,7 +20,7 @@ tags:
 
 存储某个topic的partitions所有分配信息
 
-```json
+```text
 
 Schema:
 {
@@ -46,12 +46,12 @@ Example:
 }
 说明：紫红色为patitions编号，蓝色为同步副本组brokerId列表
 ```
-###2.partition状态信息
+### 2.partition状态信息
 /brokers/topics/[topic]/partitions/[0...N]  其中[0..N]表示partition索引号
 
 /brokers/topics/[topic]/partitions/[partitionId]/state
 
-```json
+```text
 Schema:
 {
 "controller_epoch": 表示kafka集群中的中央控制器选举次数,
@@ -75,7 +75,7 @@ Example:
 
 每个broker的配置文件中都需要指定一个数字类型的id(全局不可重复),此节点为临时znode(EPHEMERAL)
 
-```json
+```text
 Schema:
 {
 "jmx_port": jmx端口号,
@@ -103,7 +103,7 @@ Example:
 ### 5. Controller注册信息:
 /controller -> int (broker id of the controller)  存储center controller中央控制器所在kafka broker的信息
 
-```json
+```text
 Schema:
 {
 "version": 版本编号默认为1,
@@ -173,7 +173,7 @@ consumerId产生规则：
      }
      String consumerIdString = config.groupId + "_" + consumerUuid;
 ```
-```json
+```text
 Schema:
 {
 "version": 版本编号默认为1,
@@ -220,7 +220,7 @@ c) 在"Broker id 注册"节点下,注册一个watch用来监听broker的存活�
 
 /admin/reassign_partitions
 
-```json
+```text
 {
    "fields":[
       {
@@ -278,7 +278,7 @@ Example:
 /admin/preferred_replica_election
 
 
-```json
+```text
   
 {
    "fields":[
@@ -315,7 +315,7 @@ Example:
 例子:
 
 
-```json
+```text
 {
   "version": 1,
   "partitions":
