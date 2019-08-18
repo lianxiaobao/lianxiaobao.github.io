@@ -339,7 +339,7 @@ Example:
 
 /admin/delete_topics
 
-```json
+```text
 
 Schema:
 { "fields":
