@@ -160,7 +160,13 @@ kafka集群中创建一个topic为report-log   4 partitions 索引编号为0,1,
 5) 计算倍数: M = [P0,P1,P2,P3].size / [C0,C1].size,本例值M=2(向上取整)
 6) 然后依次分配partitions: C0 = [P0,P1],C1=[P2,P3],即Ci = [P(i * M),P((i + 1) * M -1)]
 ```
+即：
 
+```text
+（1）将Broker（size=n）和待分配的Partition排序。
+（2）将第i个Partition分配到第（i%n）个Broker上。
+（3）将第i个Partition的第j个Replica分配到第（(i + j) % n）个Broker上
+```
 
 ### 6. Consumer注册信息:
 每个consumer都有一个唯一的ID(consumerId可以通过配置文件指定,也可以由系统生成),此id用来标记消费者信息.
