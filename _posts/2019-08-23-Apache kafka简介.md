@@ -14,7 +14,7 @@ tags:
 ---
 
 
-本文转载于：https://blog.csdn.net/liyiming2017/article/details/82790040
+
 
 #### 目录
 >* [kafka简介](https://lianxiaobao.github.io/2019/08/23/Apache-kafka%E7%AE%80%E4%BB%8B/)
@@ -73,4 +73,6 @@ Kafka应用场景
 小结：通过本章学习，可以掌握kafka的定位及其特性，了解消息系统的基本运作方式。以及kafka的应用场景。下面一章我们将通过安装和使用kafka，对kafka有近一步直观的认知。
 
 下一步：开始[《kafka安装和使用》](https://lianxiaobao.github.io/2019/08/23/Apache-Kafka%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/)的学习
+
+本文转载于：https://blog.csdn.net/liyiming2017/article/details/82790040
  
