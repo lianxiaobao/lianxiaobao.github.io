@@ -143,6 +143,8 @@ DeleteTopicsListener|	/admin/delete_topics|	完成服务器端删除主题的相
 |监听名称|	监听zookeeper节点|	作用|
 |:------------- |:---------------:| -------------:|
 |BrokerChangeListener|	/brokers/ids	|代理发生增减的时候进行相应的处理|
+
+
 4、重新初始化ControllerContext，
 
 5、启动控制器和其他代理之间通信的ControllerChannelManager
