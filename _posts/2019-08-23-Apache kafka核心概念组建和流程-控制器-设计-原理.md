@@ -128,12 +128,16 @@ kafka每个broker启动的时候，都会实例化一个KafkaController，并将
 |PartitionsReassignedListener	|/admin/reassign_partitions	|节点变化将会引发分区重分配|
 |IsrChangeNotificationListener|	/isr_change_notification|	处理分区的ISR发生变化引发的操作|
 |PreferredReplicaElectionListener	|/admin/preferred_replica_election	|将优先副本选举为leader副本|
+
+
 2、注册主题管理的相关监听
 
 |监听名称|	监听zookeeper节点	|作用|
 |:------------- |:---------------:| -------------:|
 |TopicChangeListener|	/brokers/topics|	监听主题发生变化时进行相应操作|
 DeleteTopicsListener|	/admin/delete_topics|	完成服务器端删除主题的相应操作。否则客户端删除主题仅仅是表示删除|
+
+
 3、注册代理变化监听器
 
 |监听名称|	监听zookeeper节点|	作用|
