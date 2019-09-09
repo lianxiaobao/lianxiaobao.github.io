@@ -151,12 +151,8 @@ java -cp target/flink-sql-submit.jar com.github.wuchong.sqlsubmit.SourceGenerato
 ### 模拟kafka生产数据 `SourceGenerator.java`
 
 ```java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-/*source-generator.sh 脚本会自动读取 user_behavior.log 的数据并以默认每毫秒1条的速率灌到 Kafka 的 user_behavior topic 中
+/*
+ *source-generator.sh 脚本会自动读取 user_behavior.log 的数据并以默认每毫秒1条的速率灌到 Kafka 的 user_behavior topic 中
  *  ···
  *source "$(dirname "$0")"/kafka-common.sh
  * # prepare Kafka
@@ -172,6 +168,12 @@ import java.io.InputStreamReader;
  * ...
  *
  */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+
 public class SourceGenerator {
 
     private static final long SPEED = 1000; // 每秒1000条
