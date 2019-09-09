@@ -151,28 +151,27 @@ java -cp target/flink-sql-submit.jar com.github.wuchong.sqlsubmit.SourceGenerato
 ### 模拟kafka生产数据 `SourceGenerator.java`
 
 ```java
-/*
- *source-generator.sh 脚本会自动读取 user_behavior.log 的数据并以默认每毫秒1条的速率灌到 Kafka 的 user_behavior topic 中
- *  ···
- *source "$(dirname "$0")"/kafka-common.sh
- * # prepare Kafka
- * echo "Generating sources..."
- * create_kafka_topic 1 1 user_behavior
- * # 将输出结果 管道的形式输入到kafka topic中
- * java -cp target/flink-sql-submit.jar com.github.wuchong.sqlsubmit.SourceGenerator 1000 | $KAFKA_DIR/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic user_behavior
- * ···
- *
- * user_behavior.log
- * {"user_id": "543462", "item_id":"1715", "category_id": "1464116", "behavior": "pv", "ts": "2017-11-26T01:00:00Z"}
- * {"user_id": "662867", "item_id":"2244074", "category_id": "1575622", "behavior": "pv", "ts": "2017-11-26T01:00:00Z"}
- * ...
- *
- */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+// source-generator.sh 脚本会自动读取 user_behavior.log 的数据并以默认每毫秒1条的速率灌到 Kafka 的 user_behavior topic 中
+// ···
+// source "$(dirname "$0")"/kafka-common.sh
+// # prepare Kafka
+// echo "Generating sources..."
+// create_kafka_topic 1 1 user_behavior
+// # 将输出结果 管道的形式输入到kafka topic中
+// java -cp target/flink-sql-submit.jar com.github.wuchong.sqlsubmit.SourceGenerator 1000 | $KAFKA_DIR/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic user_behavior
+// ···
+//
+// user_behavior.log
+// ···
+// {"user_id": "543462", "item_id":"1715", "category_id": "1464116", "behavior": "pv", "ts": "2017-11-26T01:00:00Z"}
+// {"user_id": "662867", "item_id":"2244074", "category_id": "1575622", "behavior": "pv", "ts": "2017-11-26T01:00:00Z"}
+// ...
 
 public class SourceGenerator {
 
