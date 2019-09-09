@@ -138,7 +138,6 @@ public class SqlSubmit {
 ```
 >1. SqlSubmit.run; 
  * 获取`run.sh`脚本中的命令参数
-
 >2. submit.run();
  * 解析`sql`脚本提交任务
 >
