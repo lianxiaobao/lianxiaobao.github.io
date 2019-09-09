@@ -255,7 +255,7 @@ public class CliOptionsParser {
 ##  解析`sql` 调用`TableEnvironment`执行不同的任务
 
 
-### SqlCommandParser.java
+### 1. `SqlCommandParser.java`
 >知识点
 
 1. [Java 枚举(enum) 详解7种常见的用法](https://blog.csdn.net/qq_27093465/article/details/52180865)
@@ -422,7 +422,7 @@ public final class SqlCommandParser {
 
 ```
 
-### `q1.sql`
+### 2. `q1.sql`
 * flink sql 脚本任务
 
 ```sql
