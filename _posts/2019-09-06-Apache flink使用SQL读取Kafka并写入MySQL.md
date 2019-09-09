@@ -17,6 +17,7 @@ tags:
 
 #### 目录
 >* [使用 SQL 读取 Kafka 并写入 MySQL](https://lianxiaobao.github.io/2019/09/06/Apache-flink%E4%BD%BF%E7%94%A8SQL%E8%AF%BB%E5%8F%96Kafka%E5%B9%B6%E5%86%99%E5%85%A5MySQL/)
+>* [flink-sql-submit 源码解读-模拟kafka源](https://lianxiaobao.github.io/2019/09/09/flink-sql-submit-%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E6%A8%A1%E6%8B%9Fkafka%E6%BA%90/)
 
 
 #### 推荐两位大佬博主，flink社区贡献者
