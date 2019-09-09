@@ -156,7 +156,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-/**
+/*
  * source-generator.sh 脚本会自动读取 user_behavior.log 的数据并以默认每毫秒1条的速率灌到 Kafka 的 user_behavior topic 中
  *```
  *source "$(dirname "$0")"/kafka-common.sh
