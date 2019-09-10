@@ -60,4 +60,71 @@ new Thread(
 
 如果要给一个字符串列表通过自定义比较器，按照字符串长度进行排序，Java 7的书写形式如下：
 
+```java
+// JDK7 匿名内部类写法
+//通过内部类重载了Comparator接口的compare()方法，实现比较逻辑。
+List<String> list = Arrays.asList("i","love","guo","jin");
+Collections.sort(list, new Comparator<String>() {//接口名
+    @Override
+    public int compare(String o1, String o2) {//方法名
+        if(o1 == null){
+            return -1;
+        }
+        if(o2 == null){
+            return -1;
+        }
+        return o1.length()-o2.length();
+    }
+});
+```
 
+采用Lambda表达式可简写如下：
+
+```java
+// JDK8 Lambda表达式写法
+List<String> list = Arrays.asList("i","love","guo","jin");
+Collections.sort(list,(o1, o2)->{
+    if(o1 == null){
+        return -1;
+    }
+    if(o2 == null){
+        return -1;
+    }
+    return o1.length()-o2.length();
+});
+```
+上述代码跟匿名内部类的作用是一样的。除了省略了接口名和方法名，代码中把参数表的类型也省略了。这得益于`javac的类型推断机制`，编译器能够根据上下文信息推断出参数的类型，当然也有推断失败的时候，这时就需要手动指明参数类型了。注意，Java是强类型语言，每个变量和对象都必需有明确的类型。
+
+### 简写的依据
+`能够使用Lambda的依据是必须有相应的函数接口`（函数接口，是指内部只有一个抽象方法的接口）。这一点跟Java是强类型语言吻合，也就是说你并不能在代码的任何地方任性的写Lambda表达式。实际上Lambda的类型就是对应函数接口的类型。`Lambda表达式另一个依据是类型推断机制`，在上下文信息足够的情况下，编译器可以推断出参数表的类型，而不需要显式指名。Lambda表达更多合法的书写形式如下：
+
+```java
+// Lambda表达式的书写形式
+Runnable run = () -> System.out.println("Hello World");// 1
+ActionListener listener = event -> System.out.println("button clicked");// 2
+Runnable multiLine = () -> {// 3 代码块
+    System.out.print("Hello");
+    System.out.println("xiao bao");
+};
+BinaryOperator<Long> add = (Long x, Long y) -> x + y;// 4
+BinaryOperator<Long> addImplicit = (x, y) -> x + y;// 5 类型推断
+
+```
+>1. 1展示了无参函数的简写；
+>2. 2处展示了有参函数的简写，以及类型推断机制；
+>3. 3是代码块的写法；
+>4. 4和5再次展示了类型推断机制。
+>
+>
+
+### 自定义函数接口
+自定义函数接口很容易，只需要编写一个只有一个抽象方法的接口即可。
+
+
+```java
+// 自定义函数接口
+@FunctionalInterface
+interface consumerInterface<T>{
+    void accept(T t);
+}
+```
