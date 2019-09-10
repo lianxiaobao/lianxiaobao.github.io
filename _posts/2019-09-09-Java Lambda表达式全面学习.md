@@ -13,6 +13,7 @@ tags:
     
 ---
 
+
 # Java Lambda 表达式
 本篇我们首先感受一下使用Lambda表达式带来的便利之处。
 >Java Lambda表达式的一个重要用法是简化某些匿名内部类（`Anonymous Classes`）的写法。
@@ -1574,6 +1575,8 @@ Stream并行执行时用到`ForkJoinPool.commonPool()`得到的线程池，为�
 
 
 
+>推荐博主：
+>[CarpenterLee](https://www.cnblogs.com/CarpenterLee/)（ alibaba ）
 
 
 
