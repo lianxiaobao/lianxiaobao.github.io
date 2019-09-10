@@ -122,9 +122,37 @@ BinaryOperator<Long> addImplicit = (x, y) -> x + y;// 5 类型推断
 
 
 ```java
-// 自定义函数接口
+//@FunctionalInterface是可选的，
+//但加上该标注编译器会帮你检查接口是否符合函数接口规范。
+//就像加入@Override标注会检查是否重载了函数一样。
+
 @FunctionalInterface
 interface consumerInterface<T>{
     void accept(T t);
 }
 ```
+
+有了上述接口定义，就可以写出类似如下的代码：
+`ConsumerInterface<String> consumer = (str)-> System.out.println(str);`
+甚至`ConsumerInterface<String> consumer = str -> System.out.println(str);`
+进一步的，还可以这样使用：
+
+```java
+class MyStream<T>{
+	private List<T> list;
+    ...
+	public void myForEach(ConsumerInterface<T> consumer){// 1
+		for(T t : list){
+			consumer.accept(t);
+		}
+	}
+}
+MyStream<String> stream = new MyStream<String>();
+stream.myForEach(str -> System.out.println(str));// 使用自定义函数接口书写Lambda表达式
+```
+## Lambda and Anonymous Classes(II)
+
+
+下面将进一步区分Lambda表达式和匿名内部类在JVM层面的区别，如果对这一部分不感兴趣，可以跳过。
+
+经过上面的介绍，我们看到Lambda表达式似乎只是为了简化匿名内部类书写，这看起来仅仅通过语法糖在编译阶段把所有的Lambda表达式替换成匿名内部类就可以了。但实时并非如此。在JVM层面，Lambda表达式和匿名内部类有着明显的差别。
