@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      java 8 特性
-subtitle:   Java Lambda表达式全面学习，再不学会被淘汰
+title:      java 8 特性（深入理解Java函数式编程和Streams API）
+subtitle:   Java Lambda表达式全面学习，不去学习新技术就很可能被技术抛弃
 date:       2019-09-10
 author:     BY xiaobao(微信：Bao1697047283)
 header-img: img/post-bg-mi1.jpg
