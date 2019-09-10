@@ -259,6 +259,7 @@ public class CliOptionsParser {
 
 1. [Java 枚举(enum) 详解7种常见的用法](https://blog.csdn.net/qq_27093465/article/details/52180865)
 2. [JDK8新特性-java.util.function-Function接口](https://blog.csdn.net/huo065000/article/details/78964382)
+3. [Java Lambda表达式全面学习](https://lianxiaobao.github.io/2019/09/10/Java-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A8%E9%9D%A2%E5%AD%A6%E4%B9%A0/)
 
 
 ```java
